@@ -15,7 +15,9 @@
     
     html_options = (typeof html_options === "undefined") ? {} : html_options;
     options = (typeof options === "undefined") ? {} : options;
+    options = $.extend({sanitize: true}, options)
 
+    str = options.sanitize ? str : str
     str = str.replace(/\r\n?/, "\n"); // \r\n and \r -> \n
     str = $.trim(str); // remove whitespaces
     if(str.length) {

@@ -31,7 +31,9 @@
   };
 
   $.fn.simpleFormat = function(html_options, options) {
-    return this.html($.simpleFormat(this.html(), html_options, options));
+    $.each(this, function(){
+      return $(this).html($.simpleFormat($(this).html(), html_options, options));
+    });
   };
  
 })(jQuery);
